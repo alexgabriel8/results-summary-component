@@ -1,21 +1,11 @@
-
-
-// Make Type theme
-// Structure Theme
-// Make dark theme
-
 export type TTheme = {
+    name: string
     primary: string
     primaryTxtColor: string
     primaryTxtColorAlt: string
     bgColor: string
-    cardGradientColor: string
-    circleGradientColor: string
-
-    stat1Color: string
-    stat2Color: string
-    stat3Color: string
-    stat4Color: string
+    gradientColor: string
+    sectionBoxShadowColor: string
 }
 
 export type TThemes = {
@@ -24,29 +14,22 @@ export type TThemes = {
 
 export const themes: TThemes = {
     light: {
+        name: "light",
         primary: "#303b5a",
         primaryTxtColor: "#c8c7ff",
         primaryTxtColorAlt: "#ebf1ff",
         bgColor: '#FFFFFF',
-        cardGradientColor: "#7857ff, #2e2be9",
-        circleGradientColor: "hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0)",
-
-        stat1Color: "#ff5757",
-        stat2Color: "#ffb01f",
-        stat3Color: "#00bd91",
-        stat4Color: "#1125d4"
+        gradientColor: "#7857ff, #2e2be9",
+        sectionBoxShadowColor: '#00000015'
     },
+    
     dark: {
-        primary: "#aaaaaa",
+        name: "dark",
+        primary: "#3b4153", // #3b4153 #608aff
         primaryTxtColor: "#111111",
         primaryTxtColorAlt: "#ebf1ff",
-        bgColor: '#FFFFFF',
-        cardGradientColor: "#7857ff, #2e2be9",
-        circleGradientColor: "hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0)",
-
-        stat1Color: "#ff5757",
-        stat2Color: "#ffb01f",
-        stat3Color: "#00bd91",
-        stat4Color: "#1125d4"
+        bgColor: '#101010',
+        gradientColor: "#7857ff, #2e2be9",
+        sectionBoxShadowColor: "#2d2d2d"
     }
 }
