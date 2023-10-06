@@ -1,0 +1,28 @@
+{
+    "scores": [
+        {
+            "name": "Reaction",
+            "value": 80,
+            "colorCode": "#ff5757",
+            "iconPath": "./assets/score-icons/icon-reaction.svg"
+        },
+        {
+            "name": "Memory",
+            "value": 92,
+            "colorCode": "#ffb01f",
+            "iconPath": "./assets/score-icons/icon-memory.svg"
+        },
+        {
+            "name": "Verbal",
+            "value": 61,
+            "colorCode": "#00bd91",
+            "iconPath": "./assets/score-icons/icon-verbal.svg"
+        },
+        {
+            "name": "Visual",
+            "value": 72,
+            "colorCode": "#1125d4",
+            "iconPath": "./assets/score-icons/icon-visual.svg"
+        }
+    ]
+}
