@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
         font-family: 'Hanken Grotesk';
+        transition: background-color 0.5s, color 0.5s;
     }
 
     body {
