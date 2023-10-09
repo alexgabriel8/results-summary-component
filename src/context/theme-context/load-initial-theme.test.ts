@@ -3,7 +3,7 @@ import { describe, expect, it, beforeEach, vi } from "vitest";
 import { loadInitialTheme } from "./load-initial-theme";
 import { saveOnLocalStorage } from "../../scripts/localStorage";
 
-import { themes } from "../../constants/themes";
+import { themeLocalStorageKey, themes } from "../../constants/themes";
 
 const matchMediaMock = {
   true: () => (
@@ -24,13 +24,13 @@ const matchMediaMock = {
 }
 
 describe('Load theme', () => {
-  const key = 'lastUsedTheme'
+  const key = themeLocalStorageKey
 
   beforeEach(() => {
     localStorage.clear()
   })
 
-  describe("Theme saved in local storage", () => {
+  describe("Valid theme saved in local storage", () => {
     it("Should load light theme saved in local storage even if user prefers dark", () => {
       matchMediaMock.false()
 
@@ -43,6 +43,17 @@ describe('Load theme', () => {
 
       saveOnLocalStorage(key, themes.dark)
       expect(loadInitialTheme()).toStrictEqual(themes.dark)
+    })
+  })
+
+  describe('Invalid theme saved in local storage', () => {
+    it("Should not load theme if it's not equal to the one in themes.ts", () => {
+      matchMediaMock.true()
+      const invalidTheme = {...themes.light}
+      invalidTheme.primary = "#A000A0"
+      saveOnLocalStorage(key, invalidTheme)
+
+      expect(loadInitialTheme()).toStrictEqual(themes.light)
     })
   })
 

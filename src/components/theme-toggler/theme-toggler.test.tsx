@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event'
 import { ThemeToggler } from "./theme-toggler";
 import { ThemeProvider } from '../../context/theme-context/theme-context';
 import { themes } from '../../constants/themes';
+import { themeLocalStorageKey } from '../../constants/themes';
 
 import { getLocalStorageItem } from '../../scripts/localStorage';
 
@@ -27,7 +28,7 @@ const matchMediaMock = {
 }
   
 describe('Click on theme toggler icon', () => {
-    const key = 'lastUsedTheme'
+    const key = themeLocalStorageKey
     matchMediaMock.false()
 
     const user = userEvent.setup()
