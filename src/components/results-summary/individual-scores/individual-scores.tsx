@@ -13,7 +13,7 @@ import { TThemeContext } from '../../../context/theme-context/theme-context';
 export const IndividualScores = () => {
     const { activeTheme } = useContext(ThemeContext) as unknown as TThemeContext
     return (
-        <StyledDiv $themeName={activeTheme.name}>
+        <StyledDiv $txtColor={activeTheme.txtColor}>
             <h2>Summary</h2>
             <ul>
                 {
@@ -30,7 +30,7 @@ export const IndividualScores = () => {
 }
 
 type TStyledDiv = {
-    $themeName: string
+    $txtColor: string
 }
 
 const StyledDiv = styled.div<TStyledDiv>`
@@ -42,6 +42,6 @@ const StyledDiv = styled.div<TStyledDiv>`
     padding: 40px 20px;
 
     h2 {
-        color: ${props => props.$themeName === 'light' ? 'black' : 'white'};
+        color: ${props => props.$txtColor};
     }
 `
