@@ -1,4 +1,5 @@
-import { it, expect, describe, expectTypeOf, beforeEach, vi } from 'vitest'
+// @ts-nocheck
+import { it, expect, describe, expectTypeOf, beforeEach } from 'vitest'
 
 import { saveOnLocalStorage, getLocalStorageItem } from './localStorage'
 
