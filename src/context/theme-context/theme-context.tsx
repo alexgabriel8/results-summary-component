@@ -17,7 +17,7 @@ export type TThemeContext = {
 export const ThemeContext = createContext<TThemeContext | null>(null)
 
 export const ThemeProvider = ({ children }: React.PropsWithChildren) => {
-    const [ activeTheme, setActiveTheme ] = useState(loadInitialTheme()) as unknown as TTheme
+    const [ activeTheme, setActiveTheme ] = useState(loadInitialTheme())
 
     useEffect(() => {
         if(activeTheme.name === 'light') {
