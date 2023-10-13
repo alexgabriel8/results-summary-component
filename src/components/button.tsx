@@ -1,13 +1,23 @@
 import { useContext } from 'react';
 import styled from "styled-components";
 
+import { openModal } from './modal/open-modal';
+
 import { ThemeContext } from '../context/theme-context/theme-context';
 import { TThemeContext } from '../context/theme-context/theme-context';
 
 export const Button = ({children}: React.PropsWithChildren) => {
     const { activeTheme } = useContext(ThemeContext) as unknown as TThemeContext
+
+    const handleClick = () => {
+        openModal()
+    }
+
     return(
-        <StyledButton theme={activeTheme}>
+        <StyledButton
+            theme={activeTheme}
+            onClick={handleClick}
+        >
             {children}
         </StyledButton>
     )
